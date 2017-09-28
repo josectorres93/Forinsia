@@ -18,13 +18,19 @@ public class TipoActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ImageButton formando = (ImageButton)findViewById(R.id.formandoBtn);
+        ImageButton formador = (ImageButton)findViewById(R.id.formadorBTN);
+
         formando.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(v.getContext(),FormandoActivity.class));
 
-
-
+            }
+        });
+        formador.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(),FormadorActivity.class));
 
             }
         });

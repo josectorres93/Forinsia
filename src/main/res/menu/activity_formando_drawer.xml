@@ -3,13 +3,33 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/naev_manage"
-            android:title="Tools" />
+            android:icon="@drawable/calendar"
+            android:title="As minhas acções"/>
+
+        <item
+            android:id="@+id/acurrentes"
+            android:title="Currentes" />
+        <item
+            android:id="@+id/aterminadas"
+            android:title="Terminadas" />
+
     </group>
 
-    <item android:title="Communicate">
+        <item android:title="Inqueritos"
+            android:icon="@drawable/inqueritos"/>
+        <item
+            android:id="@+id/inquerito"
+            android:title="Responder Inquerito" />
+        <item
+            android:id="@+id/rinquerito"
+            android:title="Resultados" />
+
+    <item android:title="Agenda"
+          android:icon="@drawable/gcalendar"/>
 
 
-    </item>
+
+
+
 
 </menu>
