@@ -35,10 +35,7 @@
             android:name=".FormadorActivity"
             android:label="@string/title_activity_formador"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".InqueritoActivity"
-            android:label="@string/title_activity_inquerito"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".InqueritoActivity"></activity>
     </application>
 
 </manifest>

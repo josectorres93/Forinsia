@@ -73,7 +73,7 @@ public class FormandoActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.inquerito) {
-            startActivity(new Intent(this,InqueritoActivity.class));
+           startActivity(new Intent(this,InqueritoActivity.class));
 
         } else if (id == R.id.nav_gallery) {
 
