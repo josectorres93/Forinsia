@@ -17,7 +17,6 @@ public class InqueritoActivity extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_inquerito);
 
         Button next=(Button)findViewById(R.id.nxt1Btn);
-        Button next2=(Button)findViewById(R.id.nxt2Btn);
         Button prev1=(Button)findViewById(R.id.prev1Btn);
 
 
@@ -32,16 +31,17 @@ public class InqueritoActivity extends AppCompatActivity implements View.OnClick
         View layout =null;
         switch(id){
             case R.id.nxt1Btn:
-            case R.id.prev1Btn:
+            //case R.id.prev1Btn:
                 layout = inflater.inflate(R.layout.inquerito_2, null);
                 mainLayout.removeAllViews();
                 mainLayout.addView(layout);
-
+                final Button pag2 = (Button) findViewById(R.id.nxt2Btn);
+                pag2.setOnClickListener(this);
 
                 break;
             case R.id.nxt2Btn:
                 layout = inflater.inflate(R.layout.inquerito_2, null);
-                mainLayout.removeAllViews();
+               mainLayout.removeAllViews();
                 mainLayout.addView(layout);
                 break;
 

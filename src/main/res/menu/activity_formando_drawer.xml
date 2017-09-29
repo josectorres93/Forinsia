@@ -7,8 +7,8 @@
             android:title="As minhas acções"/>
 
         <item
-            android:id="@+id/acurrentes"
-            android:title="Currentes" />
+            android:id="@+id/adecorrer"
+            android:title="A decorrer" />
         <item
             android:id="@+id/aterminadas"
             android:title="Terminadas" />

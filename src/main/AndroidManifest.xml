@@ -35,7 +35,23 @@
             android:name=".FormadorActivity"
             android:label="@string/title_activity_formador"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".InqueritoActivity"></activity>
+        <activity android:name=".InqueritoActivity" />
+        <activity
+            android:name=".ADecorrerActivity"
+            android:label="@string/title_activity_adecorrer"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ATerminadasActivity"
+            android:label="@string/title_activity_aterminadas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".OsMeusDocumentosActivity"
+            android:label="@string/title_activity_os_meus_documentos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ConsultarAvaliacaoActivity"
+            android:label="@string/title_activity_consultar_avaliacao"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

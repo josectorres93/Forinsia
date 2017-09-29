@@ -10,4 +10,8 @@
     <string name="title_activity_formador">FormadorActivity</string>
     <string name="title_activity_inquerito">InqueritoActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_adecorrer">ADecorrerActivity</string>
+    <string name="title_activity_aterminadas">ATerminadasActivity</string>
+    <string name="title_activity_os_meus_documentos">OsMeusDocumentosActivity</string>
+    <string name="title_activity_consultar_avaliacao">ConsultarAvaliacaoActivity</string>
 </resources>
