@@ -11,10 +11,24 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import java.util.ArrayList;
+import java.util.Random;
+
+import app.insia.forinsiaapp.Utilizador;
+
 public class MainActivity extends AppCompatActivity   {
+
+    static ArrayList<Utilizador> users = new ArrayList<>();
+    public static int permission=0;
+    Utilizador logged= new Utilizador();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        addUser("perfil1","123",1);
+        addUser("perfil2","123",2);
+        addUser("perfil3","123",3);
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -28,7 +42,7 @@ public class MainActivity extends AppCompatActivity   {
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(v.getContext(),TipoActivity.class));
+                startActivity(new Intent(v.getContext(),CredencialActivity.class));
 
 
 
@@ -45,30 +59,22 @@ public class MainActivity extends AppCompatActivity   {
 
                     //email implementado só precisa de ser configurado no emulador\dispositivo móvel
                   /*  Intent email = new Intent(Intent.ACTION_SEND);
-                    email.putExtra(Intent.EXTRA_EMAIL,"josecarlostorres93@gmail.com");
+                    email.putExtra(Intent.EXTRA_EMAIL,"exemplo@gmail.com");
                     email.putExtra(Intent.EXTRA_SUBJECT, "teste");
                     email.putExtra(Intent.EXTRA_TEXT,"erty");
                     email.setType("message/rfc822");
-                    startActivity(Intent.createChooser(email, "josecarlostorres93@gmail.com"));*/
-                /*  if(MainActivity.verifyUser(txt1,txt2)==1) {
-
-
-                        finish();
-                    }*/
+                    startActivity(Intent.createChooser(email, "teste@gmail.com"));*/
 
 
 
             }
         });
-        log.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                //startActivity(new Intent(this, .class));
-            }
-        });
+
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 startActivity(new Intent(v.getContext(),TipoActivity.class));
 
 
@@ -80,10 +86,7 @@ public class MainActivity extends AppCompatActivity   {
 
 
     }
-    public static int verifyUser(String s1, String s2){
 
-        return 1;
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -105,6 +108,32 @@ public class MainActivity extends AppCompatActivity   {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public static void addUser(String s1, String s2, int s3) {
+        Utilizador u = new Utilizador(s1, s2, s3);
+        users.add(u);
+
+    }
+
+  public void updatePermission (Utilizador u){
+     if(u.getKey()==1){
+         this.permission=1;
+     }else if(u.getKey()==2){
+         this.permission=2;
+     }else if(u.getKey()==3){
+         this.permission=3;
+     }
+
+  }
+
+    public void verifyUser(String s1, String s2){
+        for(Utilizador u:users){
+            if(u.getUser().equals(s1)&&u.getPass().equals(s2)){
+
+            }
+
+    }
     }
 
 

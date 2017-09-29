@@ -1,73 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="app.insia.forinsiaapp.TipoActivity"
-    tools:showIn="@layout/activity_tipo">
+    tools:showIn="@layout/activity_tipo"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
 
     <ImageButton
-        android:id="@+id/formadorBTN"
+        android:id="@+id/formadorBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="57dp"
+        android:layout_marginTop="231dp"
         app:srcCompat="@drawable/user_gray"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="165dp"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="65dp" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <ImageButton
         android:id="@+id/formandoBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        app:layout_constraintLeft_toLeftOf="@+id/formadorBTN"
-        app:layout_constraintTop_toBottomOf="@+id/formadorBTN"
+        android:layout_marginTop="74dp"
         app:srcCompat="@drawable/user_green"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1" />
+        android:layout_below="@+id/formadorBtn"
+        android:layout_alignStart="@+id/formadorBtn" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="112dp"
-        android:layout_height="25dp"
-        android:text="Formador"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        android:layout_marginEnd="77dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="165dp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginRight="82dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="99dp"
-        android:layout_height="36dp"
-        android:text="Formando"
-        tools:layout_constraintTop_creator="1"
-        android:layout_marginTop="57dp"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="@+id/textView3"
-        android:layout_marginLeft="-29dp"
-        android:layout_marginStart="8dp" />
-
-    <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Insira o tipo de perfil em que se quer logar:"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="77dp"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_marginBottom="120dp"
+        android:text="Insira o seu perfil desejado:"
+        android:layout_above="@+id/formandoBtn"
+        android:layout_toEndOf="@+id/formadorBtn" />
+
+    <TextView
+        android:id="@+id/formadorTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="49dp"
+        android:text="Formador"
+        android:layout_toEndOf="@+id/formadorBtn"
+        android:layout_alignTop="@+id/formadorBtn" />
+
+    <TextView
+        android:id="@+id/formandoTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/formadorTxt"
+        android:layout_alignTop="@+id/formandoBtn"
+        android:text="Formando" />
+</RelativeLayout>
