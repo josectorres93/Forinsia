@@ -1,8 +1,5 @@
 package app.insia.forinsiaapp;
 
-/**
- * Created by José on 29/09/2017.
- */
 
 public class Utilizador {
 
@@ -22,10 +19,10 @@ public class Utilizador {
         this.key = key;
     }
 
-    public String user;
-    public String pass;
-    public int permissao;
-    public int key;
+    private String user;
+    private String pass;
+    private int permissao;
+    private int key;
 
     public int getKey() {
         return key;

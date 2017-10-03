@@ -2,6 +2,7 @@ package app.insia.forinsiaapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -68,7 +69,7 @@ public class FormandoActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
@@ -78,7 +79,8 @@ public class FormandoActivity extends AppCompatActivity
         } else if (id == R.id.adecorrer) {
             startActivity(new Intent(this,ADecorrerActivity.class));
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.aterminadas) {
+            startActivity(new Intent(this,ATerminadasActivity.class));
 
         } else if (id == R.id.nav_manage) {
 

@@ -1,17 +1,17 @@
 <resources>
-    <string name="app_name">ForINSIAApp</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_credencial">CredencialActivity</string>
-    <string name="title_activity_tipo">TipoActivity</string>
-    <string name="title_activity_formando">FormandoActivity</string>
-
+    <string name="app_name">INSIA App</string>
+    <string name="action_settings">Log Out</string>
+    <string name="title_activity_credencial">INSIA App</string>
+    <string name="title_activity_tipo">INSIA APP</string>
+    <string name="title_activity_formando">INSIA App</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="title_activity_formador">FormadorActivity</string>
-    <string name="title_activity_inquerito">InqueritoActivity</string>
+    <string name="title_activity_formador">INSIA APP</string>
+    <string name="title_activity_inquerito">INSIA APP</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_adecorrer">ADecorrerActivity</string>
-    <string name="title_activity_aterminadas">ATerminadasActivity</string>
-    <string name="title_activity_os_meus_documentos">OsMeusDocumentosActivity</string>
-    <string name="title_activity_consultar_avaliacao">ConsultarAvaliacaoActivity</string>
+    <string name="title_activity_adecorrer">INSIA App</string>
+    <string name="title_activity_aterminadas">INSIA App</string>
+    <string name="title_activity_os_meus_documentos">INSIA App</string>
+    <string name="title_activity_consultar_avaliacao">INSIA App</string>
+    <string name="title_activity_agenda">INSIA App</string>
 </resources>

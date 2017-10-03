@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="app.insia.forinsiaapp.ADecorrerActivity">
+    tools:context="app.insia.forinsiaapp.AgendaActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -20,8 +20,7 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_adecorrer" />
-
+    <include layout="@layout/content_agenda" />
 
 
 </RelativeLayout>

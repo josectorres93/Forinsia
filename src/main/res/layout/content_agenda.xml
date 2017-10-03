@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="app.insia.forinsiaapp.ADecorrerActivity"
-    tools:showIn="@layout/activity_adecorrer">
+    tools:context="app.insia.forinsiaapp.AgendaActivity"
+    tools:showIn="@layout/activity_agenda">
 
 </RelativeLayout>

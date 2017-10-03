@@ -7,20 +7,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
-
 import java.util.ArrayList;
-import java.util.Random;
 
-import app.insia.forinsiaapp.Utilizador;
 
 public class MainActivity extends AppCompatActivity   {
 
     static ArrayList<Utilizador> users = new ArrayList<>();
     public static int permission=0;
-    Utilizador logged= new Utilizador();
+   // Utilizador logged= new Utilizador();
 
 
     @Override
@@ -34,57 +29,24 @@ public class MainActivity extends AppCompatActivity   {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Button credencial = (Button)findViewById(R.id.credencialBtn);
-        Button log = (Button)findViewById(R.id.entrarBtn);
+       //Button credencial = (Button)findViewById(R.id.credencialBtn);
+        ImageButton googlep = (ImageButton)findViewById(R.id.googleplusBtn);
         ImageButton facebook = (ImageButton) findViewById(R.id.faceIBtn);
-        final EditText user = (EditText)findViewById(R.id.userEdit);
-        final EditText pass = (EditText)findViewById(R.id.passEdit);
+        //final EditText user = (EditText)findViewById(R.id.userEdit);
+        //final EditText pass = (EditText)findViewById(R.id.passEdit);
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(v.getContext(),CredencialActivity.class));
-
-
-
-
+                startActivity(new Intent(v.getContext(),TipoActivity.class));
             }
         });
-        credencial.setOnClickListener(new View.OnClickListener() {
+        googlep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(v.getContext(),CredencialActivity.class));
-               /* String txt1 = "" + user.getText();
-                String txt2 = "" + pass.getText();*/
-
-
-                    //email implementado só precisa de ser configurado no emulador\dispositivo móvel
-                  /*  Intent email = new Intent(Intent.ACTION_SEND);
-                    email.putExtra(Intent.EXTRA_EMAIL,"exemplo@gmail.com");
-                    email.putExtra(Intent.EXTRA_SUBJECT, "teste");
-                    email.putExtra(Intent.EXTRA_TEXT,"erty");
-                    email.setType("message/rfc822");
-                    startActivity(Intent.createChooser(email, "teste@gmail.com"));*/
-
-
-
-            }
-        });
-
-        log.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
                 startActivity(new Intent(v.getContext(),TipoActivity.class));
 
-
-
-
             }
         });
-
-
-
     }
 
 
@@ -116,7 +78,7 @@ public class MainActivity extends AppCompatActivity   {
 
     }
 
-  public void updatePermission (Utilizador u){
+ /* public void updatePermission (Utilizador u){
      if(u.getKey()==1){
          this.permission=1;
      }else if(u.getKey()==2){
@@ -125,16 +87,16 @@ public class MainActivity extends AppCompatActivity   {
          this.permission=3;
      }
 
-  }
+  }*/
 
-    public void verifyUser(String s1, String s2){
+    /*public void verifyUser(String s1, String s2){
         for(Utilizador u:users){
             if(u.getUser().equals(s1)&&u.getPass().equals(s2)){
 
             }
 
     }
-    }
+    }*/
 
 
 }
