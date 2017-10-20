@@ -12,17 +12,25 @@
         android:id="@+id/nxt2Btn"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
         android:layout_marginBottom="12dp"
-        android:layout_marginEnd="11dp"
-        android:text="Button" />
+        android:text="Próxima Questão"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="109dp" />
     <Button
         android:id="@+id/prev1Btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Terminar"
         android:layout_alignBottom="@+id/nxt2Btn"
+        android:layout_toStartOf="@+id/nxt2Btn"
+        android:layout_marginEnd="11dp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="26dp"
-        android:text="Button" />
+        android:layout_below="@+id/checkBox" />
+
 </RelativeLayout>

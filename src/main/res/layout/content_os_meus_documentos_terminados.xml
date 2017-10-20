@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="app.insia.forinsiaapp.OsMeusDocumentosActivity"
-    tools:showIn="@layout/activity_os_meus_documentos">
+    tools:context="app.insia.forinsiaapp.OsMeusDocumentosTerminados"
+    tools:showIn="@layout/activity_os_meus_documentos_terminados">
 
     <TextView
-        android:id="@+id/avaliacao"
+        android:id="@+id/avaliacao1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -18,39 +18,31 @@
         android:text="Avaliação" />
 
     <TextView
-        android:id="@+id/notaAtr"
+        android:id="@+id/notaAtr1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
         android:text="Neste momento não existe nota a esta acção."
-        android:layout_below="@+id/avaliacao"
+        android:layout_below="@+id/avaliacao1"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="63dp" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textView61"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="47dp"
         android:text="Documentos da Acção"
-        android:layout_below="@+id/notaAtr"
+        android:layout_below="@+id/notaAtr1"
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:id="@+id/upBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView6"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
-        android:text="Upload" />
-
-    <Button
-        android:id="@+id/downBtn"
+        android:id="@+id/downBtn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Download"
-        android:layout_below="@+id/upBtn"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/textView61"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp" />
 
 </RelativeLayout>

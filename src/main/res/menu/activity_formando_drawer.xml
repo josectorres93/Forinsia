@@ -1,35 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
     <group android:checkableBehavior="single">
         <item
-            android:icon="@drawable/calendar"
-            android:title="As minhas acções"/>
-
+            android:title="As minhas acções"
+            />
         <item
             android:id="@+id/adecorrer"
-            android:title="A decorrer" />
+            android:title="A decorrer"
+            android:icon="@drawable/calendar"/>
         <item
             android:id="@+id/aterminadas"
-            android:title="Terminadas" />
-
+            android:title="Terminadas"
+            android:icon="@drawable/calendar"/>
     </group>
-
         <item android:title="Inqueritos"
-            android:icon="@drawable/inqueritos"/>
+            />
         <item
             android:id="@+id/inquerito"
-            android:title="Responder Inquerito" />
+            android:title="Responder Inquerito"
+            android:icon="@drawable/inquerito"
+            />
         <item
             android:id="@+id/rinquerito"
-            android:title="Resultados" />
-
+            android:title="Avaliação"
+            android:icon="@drawable/inqueritos"/>
     <item android:title="Agenda"
           android:icon="@drawable/gcalendar"/>
-
-
-
-
-
-
 </menu>

@@ -14,4 +14,6 @@
     <string name="title_activity_os_meus_documentos">INSIA App</string>
     <string name="title_activity_consultar_avaliacao">INSIA App</string>
     <string name="title_activity_agenda">INSIA App</string>
+    <string name="app_id">302232956849354</string>
+    <string name="title_activity_os_meus_documentos_terminados">OsMeusDocumentosTerminados</string>
 </resources>
