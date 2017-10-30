@@ -13,17 +13,28 @@
             android:title="Terminadas"
             android:icon="@drawable/calendar"/>
     </group>
-    <item android:title="Inqueritos"
-        />
+
     <item
-        android:id="@+id/inqueritof"
-        android:title="Responder Inquerito"
+        android:id="@+id/notificacaof"
+        android:title="Notificações"
         android:icon="@drawable/inquerito"
         />
     <item
         android:id="@+id/rinqueritof"
         android:title="Avaliação"
         android:icon="@drawable/inqueritos"/>
+
     <item android:title="Agenda"
+        android:id="@+id/agendaf"
         android:icon="@drawable/gcalendar"/>
+    <item
+        android:id="@+id/associf"
+        android:title="Associar Entidade"
+        android:icon="@drawable/page"
+        />
+    <item
+        android:id="@+id/ver"
+        android:title="Ver Minhas Entidades"
+        android:icon="@drawable/pe"
+        />
 </menu>

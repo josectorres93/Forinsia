@@ -15,17 +15,23 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="112dp"
-        android:text="Avaliação" />
+        android:text="Avaliação"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/notaAtr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
-        android:text="Neste momento não existe nota a esta acção."
+        android:layout_marginTop="34dp"
+        android:background="@color/colorPrimary"
+        android:text="Neste momento não existe nota para esta acção."
+        android:textSize="20dp"
+        android:textStyle="bold"
         android:layout_below="@+id/avaliacao"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="63dp" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="19dp" />
 
     <TextView
         android:id="@+id/textView6"
@@ -34,7 +40,10 @@
         android:layout_marginTop="47dp"
         android:text="Documentos da Acção"
         android:layout_below="@+id/notaAtr"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/upBtn"
@@ -52,5 +61,25 @@
         android:text="Download"
         android:layout_below="@+id/upBtn"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/inqBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="Responder Inquerito"
+        android:layout_below="@+id/downBtn"
+        android:layout_centerHorizontal="true"
+        android:onClick="getnotification"/>
+
+    <Button
+        android:id="@+id/sumBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:text="Escrever Sumário"
+        android:layout_below="@+id/inqBtn"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
 
 </RelativeLayout>

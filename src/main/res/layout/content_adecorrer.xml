@@ -17,26 +17,39 @@
         android:layout_marginStart="38dp"
         android:layout_marginTop="102dp"
         android:text="TextView"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/d1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/n1"
-        android:layout_centerHorizontal="true"
         android:text="TextView"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:layout_alignBaseline="@+id/n1"
+        android:layout_alignBottom="@+id/n1"
+        android:layout_toEndOf="@+id/n1"
+        android:layout_marginStart="48dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/l1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/d1"
-        android:layout_marginEnd="30dp"
         android:text="TextView"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:layout_alignBaseline="@+id/d1"
+        android:layout_alignBottom="@+id/d1"
+        android:layout_toEndOf="@+id/d1"
+        android:layout_marginStart="33dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+/>
 
     <TextView
         android:id="@+id/n2"
@@ -46,7 +59,11 @@
         android:layout_below="@+id/n1"
         android:layout_marginTop="61dp"
         android:text="TextView"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+        />
 
     <TextView
         android:id="@+id/d2"
@@ -55,26 +72,40 @@
         android:layout_alignEnd="@+id/d1"
         android:layout_alignTop="@+id/n2"
         android:text="TextView"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+  />
 
     <TextView
         android:id="@+id/l2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/l1"
-        android:layout_alignTop="@+id/d2"
         android:text="TextView"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:layout_alignBaseline="@+id/d2"
+        android:layout_alignBottom="@+id/d2"
+        android:layout_alignStart="@+id/l1"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+  />
 
     <TextView
         android:id="@+id/n3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignEnd="@+id/n2"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
         android:layout_below="@+id/n2"
         android:layout_marginTop="56dp"
         android:text="TextView"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+
+      />
 
     <TextView
         android:id="@+id/d3"
@@ -83,7 +114,12 @@
         android:layout_alignStart="@+id/d2"
         android:layout_alignTop="@+id/n3"
         android:text="TextView"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+
+        />
 
     <TextView
         android:id="@+id/l3"
@@ -92,5 +128,10 @@
         android:layout_alignBottom="@+id/d3"
         android:layout_alignStart="@+id/l2"
         android:text="TextView"
-        android:visibility="invisible" />
+        android:visibility="invisible"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
+
+        />
 </RelativeLayout>

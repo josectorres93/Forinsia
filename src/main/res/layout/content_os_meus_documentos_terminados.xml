@@ -12,20 +12,25 @@
         android:id="@+id/avaliacao1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:text="Avaliação"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="112dp"
-        android:text="Avaliação" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/notaAtr1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="41dp"
-        android:text="Neste momento não existe nota a esta acção."
         android:layout_below="@+id/avaliacao1"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="63dp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="43dp"
+        android:background="@color/colorPrimary"
+        android:text="Neste momento não existe nota para esta acção."
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView61"
@@ -34,7 +39,10 @@
         android:layout_marginTop="47dp"
         android:text="Documentos da Acção"
         android:layout_below="@+id/notaAtr1"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/downBtn1"
@@ -44,5 +52,15 @@
         android:layout_below="@+id/textView61"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp" />
+
+    <Button
+        android:id="@+id/inqBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Responder Inquerito"
+        android:layout_below="@+id/downBtn1"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
 
 </RelativeLayout>

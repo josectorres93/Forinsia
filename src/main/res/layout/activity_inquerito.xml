@@ -2,20 +2,74 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/inquerito_home"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="app.insia.forinsiaapp.InqueritoActivity"
-    android:id="@+id/inquerito_home">
+    android:background="@drawable/aab"
+    tools:context="app.insia.forinsiaapp.InqueritoActivity">
 
-    <Button
-        android:id="@+id/nxt1Btn"
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Proxima Página"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginEnd="34dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginBottom="53dp" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="TextView" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView3"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="11dp"
+        android:text="RadioButton" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/radioButton"
+        android:layout_below="@+id/radioButton"
+        android:text="RadioButton" />
+
+    <RadioButton
+        android:id="@+id/radioButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/radioButton2"
+        android:layout_below="@+id/radioButton2"
+        android:text="RadioButton" />
+
+    <RadioButton
+        android:id="@+id/radioButton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/radioButton3"
+        android:layout_below="@+id/radioButton3"
+        android:text="RadioButton" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/radioButton4"
+        android:layout_below="@+id/radioButton4"
+        android:layout_marginStart="57dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/nxtBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="20dp"
+        android:text="Próxima Pergunta" />
+
+
 </RelativeLayout>

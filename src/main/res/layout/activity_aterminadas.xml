@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/aab"
     tools:context="app.insia.forinsiaapp.ATerminadasActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/appBarLayout2">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -21,7 +23,16 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_aterminadas" />
-
-
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Carregue no nome da ação que pretende"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/appBarLayout2"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
