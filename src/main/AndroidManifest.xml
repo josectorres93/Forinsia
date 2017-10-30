@@ -2,10 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.insia.forinsiaapp">
 
+    <!--Permissoes para aceder a serviços exteriores a aplicação             -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
+    <!-- Descomentar para ativar o login por google plus-->
     <!--
         <meta-data
         android:name="com.google.android.gms.version"
@@ -20,6 +24,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!-- descomentar para fazer o login pelo facebook-->
         <!-- <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/> -->
         <activity
             android:name=".MainActivity"
@@ -31,6 +36,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- descomentar para fazer o login pelo facebook-->
         <!--
             <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=
@@ -68,13 +74,14 @@
             android:label="@string/title_activity_consultar_avaliacao"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AgendaActivity"
-            android:label="@string/title_activity_agenda"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".OsMeusDocumentosTerminados"
             android:label="@string/title_activity_os_meus_documentos_terminados"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SumarioActivity" />
+        <activity android:name=".EntidadesActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".CalenderActivity" />
+        <activity android:name=".NotificacaoActivity"></activity>
     </application>
 
 </manifest>
