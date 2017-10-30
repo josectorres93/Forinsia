@@ -34,7 +34,6 @@ public class ADecorrerActivity extends AppCompatActivity {
                     d1.setVisibility(View.VISIBLE);
                     l1.setVisibility(View.VISIBLE);
                 }
-
             }
             if(j==1){
                 if(MainActivity.logged.getAcoes().get(j).getTerminada()==0) {
@@ -56,7 +55,6 @@ public class ADecorrerActivity extends AppCompatActivity {
                     l3.setVisibility(View.VISIBLE);
                 }
             }
-
             n1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -75,8 +73,6 @@ public class ADecorrerActivity extends AppCompatActivity {
                     startActivity(new Intent(v.getContext(), OsMeusDocumentosActivity.class));
                 }
             });
-
         }
-
     }
 }

@@ -1,18 +1,19 @@
 package app.insia.forinsiaapp;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
+/**
+ * Esta atividade possui as funcionalidades das acçoes que ja se encontram terminadas
+ * O web service nesta ativdade tem duas funções:
+ * - Devolver a nota do formando
+ * - Possibilidade de download de documentos da acção(certificado)
+ */
 
 public class OsMeusDocumentosTerminados extends AppCompatActivity {
         public int grade=ATerminadasActivity.grade;
-
-
 
     public int getGrade() {
         return grade;
@@ -29,7 +30,6 @@ public class OsMeusDocumentosTerminados extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         Button downBtn = findViewById(R.id.downBtn1);
-
 
     }
 

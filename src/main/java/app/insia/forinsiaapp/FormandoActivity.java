@@ -1,5 +1,8 @@
 package app.insia.forinsiaapp;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,6 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
 
 public class FormandoActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,6 +34,7 @@ public class FormandoActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.setItemIconTintList(null);
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer =  findViewById(R.id.drawer_layout);
@@ -60,13 +66,19 @@ public class FormandoActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.inquerito){
-           startActivity(new Intent(this,InqueritoActivity.class));
-        } else if (id == R.id.adecorrer){
+         if (id == R.id.adecorrer){
             startActivity(new Intent(this,ADecorrerActivity.class));
         } else if (id == R.id.aterminadas){
             startActivity(new Intent(this,ATerminadasActivity.class));
-        }
+        } else if (id == R.id .rinquerito){
+            startActivity(new Intent(this, InqueritoActivity.class));
+        } else if (id == R.id.notificacao){
+             startActivity(new Intent(this, NotificacaoActivity.class));
+        } else if (id == R.id.agendafo){
+             startActivity(new Intent(this, CalenderActivity.class));
+        }else if (id==R.id.associ){
+             startActivity(new Intent(this, EntidadesActivity.class));
+         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

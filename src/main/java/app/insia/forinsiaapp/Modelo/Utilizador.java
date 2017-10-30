@@ -1,6 +1,5 @@
 package app.insia.forinsiaapp.Modelo;
 
-
 import java.util.ArrayList;
 
 public class Utilizador {
@@ -40,6 +39,7 @@ public class Utilizador {
     private int permissao;
     private int key;
     public ArrayList<Acao>acoes=new ArrayList<>();
+
 
     public ArrayList<Acao> getAcoes() {
         return acoes;

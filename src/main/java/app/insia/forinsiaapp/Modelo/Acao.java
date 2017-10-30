@@ -1,5 +1,7 @@
 package app.insia.forinsiaapp.Modelo;
 
+import java.util.ArrayList;
+
 public class Acao {
     public String nome;
     public String datainicio;
@@ -7,8 +9,24 @@ public class Acao {
     public String localidade;
     public float nota ;
     public int terminada;
+    public Entidade entidade;
 
+    public Entidade getEntidade() {
+        return entidade;
+    }
 
+    public void setEntidade(Entidade entidade) {
+        this.entidade = entidade;
+    }
+
+    public Acao(String nome, String datainicio, String localidade, float nota, int terminada, Entidade entidade) {
+        this.nome = nome;
+        this.datainicio = datainicio;
+        this.localidade = localidade;
+        this.nota = nota;
+        this.terminada = terminada;
+        this.entidade = entidade;
+    }
 
     public Acao(String nome, String datainicio, String localidade, float nota, int terminada) {
         this.nome = nome;

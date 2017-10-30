@@ -1,6 +1,10 @@
 package app.insia.forinsiaapp;
 
 import android.app.Dialog;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
@@ -17,7 +21,16 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Esta atividade corresponde as opções de cada açao
+ * O servidor tem que ser capaz de receber documentos e quarada-los numa base de dados
+ * O botão download só irá receber da base de dados documentos se lá existirem como um certificado e o pedido tem que ser feito
+ * O botão escrever sumário é exclusiva dos formadores portanto encontra-se escondida para os formandos
+ * Para gerar notificações basta alterar a função getnotifecation() para cada caso
+ * Os metodos estaticos devem ser alterados em prol da base de dados e do web service para esta atividade ser dinamica
+ * O web service deverá enviar uma notificação para a aplicaçao caso exista uma avaliação disponível
+ * o web service deverá lançar uma notificação caso existam inqueritos para responder
+ */
 public class OsMeusDocumentosActivity extends AppCompatActivity {
 
     Button buttonOpenDialog;
@@ -46,7 +59,18 @@ public class OsMeusDocumentosActivity extends AppCompatActivity {
         });
         root = new File(Environment.getExternalStorageDirectory().getAbsolutePath());
         curFolder = root;
+        Button inq=findViewById(R.id.inqBtn);
 
+        Button sum = findViewById(R.id.sumBtn);
+        if(MainActivity.logged.getPermissao()==2){
+            sum.setVisibility(View.VISIBLE);
+        }
+        sum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), SumarioActivity.class));
+            }
+        });
 
     }
     @Override
@@ -112,5 +136,23 @@ public class OsMeusDocumentosActivity extends AppCompatActivity {
         ArrayAdapter<String> directoryList = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, fileList);
         dialog_ListView.setAdapter(directoryList);
+    }
+    // Esta funçao serve para gerar notificações
+    public void getnotification(View view) {
+
+        NotificationManager notificationmgr = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+       // Intent intent = new Intent(this, TipoActivity.class);
+       // PendingIntent pintent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intent, 0);
+        Notification notif = new Notification.Builder(this)
+                .setSmallIcon(R.drawable.fifi)
+                .setContentTitle("Não tem inqueritos para responder!")
+                .setContentText("ForInsia")
+                //.setContentIntent(pintent)
+                .build();
+        notificationmgr.notify(0, notif);
+
+
+
     }
 }

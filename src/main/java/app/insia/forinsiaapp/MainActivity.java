@@ -3,6 +3,7 @@ package app.insia.forinsiaapp;
 import android.content.Intent;
 import android.os.Bundle;
 //import android.support.annotation.NonNull;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 //import android.util.Log;
@@ -40,10 +41,12 @@ import com.google.android.gms.plus.model.people.Person;
 import java.util.ArrayList;
 
 import app.insia.forinsiaapp.Modelo.Acao;
+import app.insia.forinsiaapp.Modelo.Entidade;
 import app.insia.forinsiaapp.Modelo.Utilizador;
 
 public class MainActivity extends AppCompatActivity //implements GoogleApiClient.OnConnectionFailedListener
 {
+    NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
     /* private SignInButton signInButton;
       private GoogleSignInOptions gso;
       private GoogleApiClient mGoogleApiClient;
@@ -92,10 +95,11 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
                 startActivityForResult(signInIntent, SIGN_IN);
             }
         });*/
-        final Acao a1= new Acao("agricultura", "01/10/2017","Porto", (float) 0.0,0);
-        final Acao a2= new Acao("pesca", "01/09/2017","Lisboa", (float) 11.1,1);
-        final Acao a3= new Acao("pecuaria", "10/10/2017","Coimbra", (float) 0.0,0);
-        final Acao a4= new Acao("construçao civil", "01/05/2017","Porto", (float) 14.5,1);
+        Entidade e7=new Entidade();
+        final Acao a1= new Acao("Agricultura", "01/10/2017","Porto", (float) 0.0,0);
+        final Acao a2= new Acao("Pesca", "01/09/2017","Lisboa", (float) 11.1,1);
+        final Acao a3= new Acao("Pecuaria", "10/10/2017","Coimbra", (float) 0.0,0);
+        final Acao a4= new Acao("Construçao Civil", "01/05/2017","Porto", (float) 14.5,1);
        /* acoes.add(a1);
         acoes.add(a2);
         users.add(new Utilizador("perfil1", "123", 1,acoes));
@@ -114,7 +118,9 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
                 acoes.add(a2);
                // users.add(new Utilizador("perfil1", "123", 1,acoes));
                 logged=new Utilizador(users.get(0).getUser(),users.get(0).getPass(),users.get(0).getPermissao(),users.get(0).getAcoes());
+                finish();
                 startActivity(new Intent(v.getContext(), TipoActivity.class));
+
             }
         });
         googlep.setOnClickListener(new View.OnClickListener() {
@@ -125,7 +131,10 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
                 acoes.add(a2);
                 users.add(new Utilizador("perfil2", "123", 2,acoes));
                 logged=new Utilizador(users.get(1).getUser(),users.get(1).getPass(),users.get(1).getPermissao(),users.get(1).getAcoes());
+                finish();
                 startActivity(new Intent(v.getContext(), TipoActivity.class));
+
+
             }
         });
     }

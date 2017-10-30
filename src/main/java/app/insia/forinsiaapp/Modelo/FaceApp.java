@@ -9,6 +9,10 @@ import android.util.Log;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+
+/**
+ * 
+ */
 public class FaceApp extends Application{
     @Override
     public void onCreate() {
