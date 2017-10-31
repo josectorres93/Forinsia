@@ -1,57 +1,73 @@
 package app.insia.forinsiaapp;
 
+/*
+  Todas as cores usadas estao no colors.xml, strings no strings.xml e estilos no styler.xml
+ */
+
+//import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 //import android.support.annotation.NonNull;
-import android.support.v4.app.NotificationCompat;
+//import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 //import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
+//import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-/*import android.widget.TextView;
-import android.widget.Toast;
+//import android.widget.TextView;
+//import android.widget.Toast;
 
-
+/*
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
-import com.google.android.gms.common.api.GoogleApiClient;
+import com.facebook.login.widget.LoginButton;*/
+//import com.google.android.gms.common.api.GoogleApiClient;
 
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-/*import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.Auth;
-import com.androidquery.AQuery;
+//import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+//import com.google.android.gms.common.ConnectionResult;
+//import com.google.android.gms.common.SignInButton;
+//import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+//import com.google.android.gms.auth.api.Auth;
+/*import com.androidquery.AQuery;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.plus.People;
 import com.google.android.gms.plus.Plus;
-import com.google.android.gms.plus.model.people.Person;
- */
-//import org.json.JSONObject;
-import java.util.ArrayList;
+import com.google.android.gms.plus.model.people.Person;*/
 
+//import org.json.JSONObject;
+//import org.json.JSONObject;
+
+import java.util.ArrayList;
 import app.insia.forinsiaapp.Modelo.Acao;
-import app.insia.forinsiaapp.Modelo.Entidade;
 import app.insia.forinsiaapp.Modelo.Utilizador;
+
+/**
+ * Esta é a atividade principal
+ * Nesta atividade o user faz login por google+ ou facebook
+ * O código da implementaç~~ao encontra-se comentado, em caso de erro ao testar verificar versão no manisfest
+ * Tanto no google como no facebook é necessário registar a aplicação na API deles
+ * http://demonuts.com/2017/02/07/google-plus-sign-in-integration-in-android-studio/ guia google+
+ * https://www.androidtutorialpoint.com/material-design/android-facebook-login-tutorial/ facebook
+ * Os botões de login de ambos estão comentados, os butões atuais só servem de teste
+ * O web service vai armazenar na base de dados os dados em relçao aos logions
+ */
 
 public class MainActivity extends AppCompatActivity //implements GoogleApiClient.OnConnectionFailedListener
 {
-    NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this);
-    /* private SignInButton signInButton;
-      private GoogleSignInOptions gso;
-      private GoogleApiClient mGoogleApiClient;
-      private int SIGN_IN = 30;
-    CallbackManager callbackManager;*/
+
+  //   private SignInButton signInButton;
+    //  private GoogleSignInOptions gso;
+      //private GoogleApiClient mGoogleApiClient;
+      //private int SIGN_IN = 30;
+   // CallbackManager callbackManager;
     static ArrayList<Utilizador> users = new ArrayList<>();
     public ArrayList<Acao> acoes = new ArrayList<>();
     //public static int permission = 0;
@@ -62,8 +78,9 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
         setContentView(R.layout.activity_main);
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        /*callbackManager = CallbackManager.Factory.create();
-        LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
+
+        //callbackManager = CallbackManager.Factory.create();
+       /* LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
         loginButton.setReadPermissions("email");
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
@@ -95,7 +112,6 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
                 startActivityForResult(signInIntent, SIGN_IN);
             }
         });*/
-        Entidade e7=new Entidade();
         final Acao a1= new Acao("Agricultura", "01/10/2017","Porto", (float) 0.0,0);
         final Acao a2= new Acao("Pesca", "01/09/2017","Lisboa", (float) 11.1,1);
         final Acao a3= new Acao("Pecuaria", "10/10/2017","Coimbra", (float) 0.0,0);
@@ -110,7 +126,7 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
         users.add(new Utilizador("perfil3", "123", 3,acoes));*/
         ImageButton googlep = findViewById(R.id.googleplusBtn);
         ImageButton facebook = findViewById(R.id.faceIBtn);
-        users.add(new Utilizador("perfil1", "123", 1,acoes));
+        users.add(new Utilizador("perfil1","123", 1,acoes));
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -152,7 +168,7 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
                     public void onCompleted(
                             JSONObject json_object,
                             GraphResponse response) {
-                      /*  Intent intent = new Intent(MainActivity.this,
+                        Intent intent = new Intent(MainActivity.this,
                                 UserProfile.class);
                         intent.putExtra("userProfile", json_object.toString());
                         startActivity(intent);
@@ -163,7 +179,7 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
                 picture.width(120).height(120)");
                 data_request.setParameters(permission_param);
         data_request.executeAsync();
-    }*/
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -177,8 +193,8 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
         return super.onOptionsItemSelected(item);
     }
 
-
- /* public void updatePermission (Utilizador u){
+*/
+/* public void updatePermission (Utilizador u){
      if(u.getKey()==1){
         this.permission=1;
      }else if(u.getKey()==2){
@@ -187,12 +203,7 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
          this.permission=3;
      }
   }*/
-    /*public void verifyUser(String s1, String s2){
-        for(Utilizador u:users){
-            if(u.getUser().equals(s1)&&u.getPass().equals(s2)){
-            }
-    }
-    }*/
+
 //private void handleSignInResult(GoogleSignInResult result) {
 /*     //If the login succeed
      if (result.isSuccess()) {
@@ -227,10 +238,10 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
      } else {
          //If login fails
          Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();*/
-    //}
- /*   @Override
+ /*   }
+  @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
-    }*/
+    }
  /*@Override
  protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
      super.onActivityResult(requestCode, resultCode, data);

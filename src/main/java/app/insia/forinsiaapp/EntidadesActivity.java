@@ -10,6 +10,12 @@ import android.widget.Spinner;
 
 import app.insia.forinsiaapp.Modelo.Acao;
 
+/**
+ * Esta atividade lista as entidades disponiveis para o utilizador
+ * A lista de entidades deve ser lida do web service
+ * O utilizador selecciona uma para depois se logar
+ */
+
 public class EntidadesActivity extends AppCompatActivity {
     public String entidade;
 

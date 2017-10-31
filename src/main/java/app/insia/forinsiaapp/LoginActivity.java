@@ -9,6 +9,13 @@ import android.widget.EditText;
 
 import app.insia.forinsiaapp.Modelo.Utilizador;
 
+/**
+ * Esta atividade vai ligar o utilizador ha entidade desejada
+ * O web service ao saber a entidade liga-se a esta com os dados de login e devolve um id como forma a que nao seja necessário ao
+ * utilizador voltar a logar-se a esta entidade
+ * O id deve-se encotrar na base de dados
+ */
+
 public class LoginActivity extends AppCompatActivity {
 
     @Override

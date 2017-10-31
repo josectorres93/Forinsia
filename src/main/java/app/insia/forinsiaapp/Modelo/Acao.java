@@ -2,6 +2,10 @@ package app.insia.forinsiaapp.Modelo;
 
 import java.util.ArrayList;
 
+/**
+ * Classe é de auxilio pois neste momento a aplicação é local
+ */
+
 public class Acao {
     public String nome;
     public String datainicio;

@@ -58,6 +58,7 @@ import pub.devrel.easypermissions.EasyPermissions;
  * O utilizador tem que associar a sua conta gmail á atividade
  * Em caso de falha verificar a versao da api no manifest
  */
+
 public class CalenderActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks, View.OnClickListener {
     GoogleAccountCredential mCredential;
     private TextView mOutputText;
@@ -70,7 +71,6 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
     static final int REQUEST_GOOGLE_PLAY_SERVICES = 1002;
     static final int REQUEST_PERMISSION_GET_ACCOUNTS = 1003;
 
-
     private static final String PREF_ACCOUNT_NAME = "accountName";
     private static final String[] SCOPES = { CalendarScopes.CALENDAR_READONLY, CalendarScopes.CALENDAR };
     private ListView eventListView;
@@ -80,13 +80,9 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
-
         LinearLayout activityLayout =  findViewById(R.id.calenderLayout);
-
         eventListView = findViewById(R.id.eventList);
-
-        ViewGroup.LayoutParams tlp = new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT,
+        ViewGroup.LayoutParams tlp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
                 ViewGroup.LayoutParams.WRAP_CONTENT);
         ImageButton back =  findViewById(R.id.backToMain);
         back.setOnClickListener(new View.OnClickListener() {
@@ -95,7 +91,6 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
                 onBackPressed();
             }
         });
-
         mCallApiButton =  findViewById(R.id.syncEvents);
         mCallApiButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,7 +125,7 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
         activityLayout.addView(mOutputText);
 
         mProgress = new ProgressDialog(this);
-        mProgress.setMessage("Syncing with calendar..");
+        mProgress.setMessage("Sincronizar..");
 
         setContentView(activityLayout);
 
@@ -141,19 +136,17 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
         getResultsFromApi();
     }
 
-
     private void getResultsFromApi() {
         if (! isGooglePlayServicesAvailable()) {
             acquireGooglePlayServices();
         } else if (mCredential.getSelectedAccountName() == null) {
             chooseAccount();
         } else if (! isDeviceOnline()) {
-            mOutputText.setText("No network connection available.");
+            mOutputText.setText("Sem ligação à Internet.");
         } else {
             new MakeRequestTask(mCredential).execute();
         }
     }
-
 
     @AfterPermissionGranted(REQUEST_PERMISSION_GET_ACCOUNTS)
     private void chooseAccount() {
@@ -179,7 +172,6 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
                     Manifest.permission.GET_ACCOUNTS);
         }
     }
-
 
     @Override
     protected void onActivityResult(
@@ -219,39 +211,30 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
         }
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        EasyPermissions.onRequestPermissionsResult(
-                requestCode, permissions, grantResults, this);
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
-
 
     @Override
     public void onPermissionsGranted(int requestCode, List<String> list) {
-        // Do nothing.
-    }
 
+    }
 
     @Override
     public void onPermissionsDenied(int requestCode, List<String> list) {
-        // Do nothing.
+
     }
 
-    /**
-     * Checks whether the device currently has a network connection.
-     * @return true if the device has a network connection, false otherwise.
-     */
     private boolean isDeviceOnline() {
         ConnectivityManager connMgr =
                 (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         return (networkInfo != null && networkInfo.isConnected());
     }
-
 
     private boolean isGooglePlayServicesAvailable() {
         GoogleApiAvailability apiAvailability =
@@ -261,10 +244,6 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
         return connectionStatusCode == ConnectionResult.SUCCESS;
     }
 
-    /**
-     * Attempt to resolve a missing, out-of-date, invalid or disabled Google
-     * Play Services installation via a user dialog, if possible.
-     */
     private void acquireGooglePlayServices() {
         GoogleApiAvailability apiAvailability =
                 GoogleApiAvailability.getInstance();
@@ -275,13 +254,6 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
         }
     }
 
-
-    /**
-     * Display an error dialog showing that Google Play Services is missing
-     * or out of date.
-     * @param connectionStatusCode code describing the presence (or lack of)
-     *     Google Play Services on this device.
-     */
     void showGooglePlayServicesAvailabilityErrorDialog(
             final int connectionStatusCode) {
         GoogleApiAvailability apiAvailability = GoogleApiAvailability.getInstance();
@@ -297,8 +269,8 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
 
     }
 
-
     private com.google.api.services.calendar.Calendar mService = null;
+
     private class MakeRequestTask extends AsyncTask<Void, Void, List<String>> {
 
         private Exception mLastError = null;
@@ -308,10 +280,9 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
             JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
             mService = new com.google.api.services.calendar.Calendar.Builder(
                     transport, jsonFactory, credential)
-                    .setApplicationName("Google Calendar API Android Quickstart")
+                    .setApplicationName("Google Calendar")
                     .build();
         }
-
 
         @Override
         protected List<String> doInBackground(Void... params) {
@@ -326,11 +297,6 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
             return null;
         }
 
-        /**
-         * Fetch a list of the next 10 events from the primary calendar.
-         * @return List of Strings describing returned events.
-         * @throws IOException
-         */
         private void getDataFromApi() throws IOException {
             // List the next 10 events from the primary calendar.
             DateTime now = new DateTime(System.currentTimeMillis());
@@ -386,7 +352,7 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
             mProgress.hide();
             System.out.println("--------------------"+scheduledEventsList.size());
             if (scheduledEventsList.size()<=0) {
-                mOutputText.setText("No results returned.");
+                mOutputText.setText("Sem resultados.");
             } else {
                 eventListAdapter = new EventListAdapter(CalenderActivity.this, scheduledEventsList);
                 eventListView.setAdapter(eventListAdapter);
@@ -406,17 +372,16 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
                             ((UserRecoverableAuthIOException) mLastError).getIntent(),
                             CalenderActivity.REQUEST_AUTHORIZATION);
                 } else {
-                    mOutputText.setText("The following error occurred:\n"
+                    mOutputText.setText("Ocorreu um erro:\n"
                             + mLastError.getMessage());
                 }
             } else {
-                mOutputText.setText("Request cancelled.");
+                mOutputText.setText("Cancelado.");
             }
         }
     }
     public void createEventAsync(final String summary, final String location, final String des, final DateTime startDate, final DateTime endDate, final EventAttendee[]
             eventAttendees) {
-
         new AsyncTask<Void, Void, String>() {
             private com.google.api.services.calendar.Calendar mService = null;
             private Exception mLastError = null;
@@ -454,7 +419,6 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
         String[] recurrence = new String[] {"RULE:FREQ=DAILY;COUNT=1"};
         event.setRecurrence(Arrays.asList(recurrence));
         event.setAttendees(Arrays.asList(eventAttendees));
-
         EventReminder[] reminderOverrides = new EventReminder[] {
                 new EventReminder().setMethod("email").setMinutes(24 * 60),
                 new EventReminder().setMethod("popup").setMinutes(10),
@@ -463,9 +427,7 @@ public class CalenderActivity extends AppCompatActivity implements EasyPermissio
                 .setUseDefault(false)
                 .setOverrides(Arrays.asList(reminderOverrides));
         event.setReminders(reminders);
-
         String calendarId = "primary";
-        //event.send
         if(mService!=null)
             mService.events().insert(calendarId, event).setSendNotifications(true).execute();
     }

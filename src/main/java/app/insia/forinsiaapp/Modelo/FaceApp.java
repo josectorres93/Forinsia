@@ -11,7 +11,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * 
+ * Esta classe é uma classe de segurança na ligação ha api do facebook
  */
 public class FaceApp extends Application{
     @Override

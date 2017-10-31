@@ -7,11 +7,19 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+/**
+ * Esta atividade corresponde apenas as acções terminadas
+ * O web service deve devolver todas as acções terminadas do formador/formando que se encontra logado
+ * Neste momento estão criados 3 textViews mas deverão ser criados mais dependendo do número de acções que um utlizador tem (um
+ * formador normalmente tem muitas acções)
+ * O utilizador entra na acção ao pressionar no título da mesma
+ * Neste momento os dados são criados na aplicação mas devem ser lidos do web service e da base de dados
+ */
 
 public class ATerminadasActivity extends AppCompatActivity {
     static int grade;
-    @Override
 
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);

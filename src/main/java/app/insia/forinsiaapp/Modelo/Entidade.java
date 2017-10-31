@@ -2,34 +2,47 @@ package app.insia.forinsiaapp.Modelo;
 
 import java.util.ArrayList;
 
+/**
+ * Classe é de auxilio pois neste momento a aplicação é local
+ */
 
 
-public class Entidade {
+public abstract class Entidade {
+
     public int id;
+
     public String nome;
+
     public ArrayList<Acao>acoes=new ArrayList<>();
 
     public int getId() {
+
         return id;
     }
-
-    public void setId(int id) {
+    public void setId(int id)
+    {
         this.id = id;
     }
 
-    public String getNome() {
+    public String getNome()
+    {
         return nome;
     }
 
-    public void setNome(String nome) {
+    public void setNome(String nome)
+    {
         this.nome = nome;
     }
 
-    public ArrayList<Acao> getAcoes() {
+    public ArrayList<Acao> getAcoes()
+    {
         return acoes;
     }
 
-    public void setAcoes(ArrayList<Acao> acoes) {
+    public void setAcoes(ArrayList<Acao> acoes)
+    {
         this.acoes = acoes;
+
     }
+
 }

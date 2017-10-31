@@ -16,6 +16,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+/**
+ * Este navigation drawer é exclusivo dos formandos
+ */
+
 
 public class FormandoActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -78,6 +82,8 @@ public class FormandoActivity extends AppCompatActivity
              startActivity(new Intent(this, CalenderActivity.class));
         }else if (id==R.id.associ){
              startActivity(new Intent(this, EntidadesActivity.class));
+         }else if (id==R.id.ver){
+             startActivity(new Intent(this, VerEntidadesActivity.class));
          }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

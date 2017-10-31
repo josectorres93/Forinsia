@@ -16,6 +16,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+/**
+ * Este navigation drawer é exclusivo dos formadores
+ */
 
 public class FormadorActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -71,6 +74,8 @@ public class FormadorActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -89,6 +94,8 @@ public class FormadorActivity extends AppCompatActivity
             startActivity(new Intent(this,CalenderActivity.class));
         } else if (id==R.id.associf){
             startActivity(new Intent(this, EntidadesActivity.class));
+        } else if(id==R.id.verf){
+            startActivity(new Intent(this, VerEntidadesActivity.class));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

@@ -11,6 +11,12 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+/**
+ * Esta atividade tem o propósito de selecionar o tipo de utilizador que se vai ligar (formador ou formando)
+ * O web service deve verificar na base de dados quais o perfis que o utilizador tem acesso
+ * Existem casos em que o utilizador tem acesso aos 2 perfis
+ */
+
 public class TipoActivity extends AppCompatActivity {
 
     @Override

@@ -130,9 +130,9 @@ public class OsMeusDocumentosActivity extends AppCompatActivity {
         textFolder.setText(f.getPath());
         File[] files = f.listFiles();
         fileList.clear();
-        for(File file : files) {
+        /*for(File file : files) {
             fileList.add(file.getPath());
-        }
+        }*/
         ArrayAdapter<String> directoryList = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, fileList);
         dialog_ListView.setAdapter(directoryList);
