@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="app.insia.forinsiaapp.ADecorrerActivity"
-    tools:showIn="@layout/activity_adecorrer">
+    tools:showIn="@layout/activity_aterminadas">
 
     <TextView
         android:id="@+id/n11"
@@ -14,72 +14,78 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="102dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="124dp"
+        android:background="@color/colorPrimary"
         android:text="TextView"
-        android:visibility="invisible"
-        android:textSize="20dp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:background="@color/colorPrimary"/>
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/d11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/n11"
-        android:layout_centerHorizontal="true"
+
+        android:layout_alignBaseline="@+id/n11"
+        android:layout_alignBottom="@+id/n11"
+        android:layout_marginStart="51dp"
+        android:layout_toEndOf="@+id/n11"
+        android:background="@color/colorPrimary"
         android:text="TextView"
-        android:visibility="invisible"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        android:background="@color/colorPrimary"/>
+        android:textSize="16sp"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/l11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_alignBaseline="@+id/d11"
+        android:layout_alignBottom="@+id/d11"
         android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/d11"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="29dp"
+        android:background="@color/colorPrimary"
         android:text="TextView"
-        android:visibility="invisible"
-        android:textSize="20dp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:background="@color/colorPrimary"/>
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/n22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/n11"
+        android:layout_alignStart="@+id/n11"
         android:layout_below="@+id/n11"
         android:layout_marginTop="61dp"
+        android:background="@color/colorPrimary"
+
         android:text="TextView"
-        android:visibility="invisible" android:textSize="20dp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:background="@color/colorPrimary"/>
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/d22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/d11"
+        android:layout_alignStart="@+id/d11"
         android:layout_alignTop="@+id/n22"
         android:text="TextView"
         android:visibility="invisible"
-        android:textSize="20dp"
-        android:textStyle="bold"
+        android:textSize="16sp"
+
         android:background="@color/colorPrimary"/>
 
     <TextView
         android:id="@+id/l22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/l11"
+        android:layout_alignStart="@+id/l11"
         android:layout_alignTop="@+id/d22"
         android:text="TextView"
         android:visibility="invisible"
-        android:textSize="20dp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:background="@color/colorPrimary"/>
 
@@ -87,14 +93,14 @@
         android:id="@+id/n33"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/n22"
+        android:layout_alignStart="@+id/n22"
         android:layout_below="@+id/n22"
         android:layout_marginTop="56dp"
+        android:background="@color/colorPrimary"
         android:text="TextView"
-        android:visibility="invisible"
-        android:textSize="20dp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        android:background="@color/colorPrimary"/>
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/d33"
@@ -104,8 +110,7 @@
         android:layout_alignTop="@+id/n33"
         android:text="TextView"
         android:visibility="invisible"
-        android:textSize="20dp"
-        android:textStyle="bold"
+        android:textSize="16sp"
         android:background="@color/colorPrimary"/>
 
     <TextView
@@ -116,7 +121,7 @@
         android:layout_alignStart="@+id/l22"
         android:text="TextView"
         android:visibility="invisible"
-        android:textSize="20dp"
+        android:textSize="16sp"
         android:textStyle="bold"
         android:background="@color/colorPrimary"/>
 </RelativeLayout>

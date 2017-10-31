@@ -98,7 +98,7 @@
                     android:id="@+id/eventAttendee"
                     android:layout_width="0dp"
                     android:layout_weight="6"
-                    android:hint="Place more attendee by comma seprated"
+                    android:hint="Insira participantes"
                     android:maxLines="1"
                     android:lines="1"
                     android:inputType="textEmailAddress"
@@ -188,14 +188,14 @@
                     android:id="@+id/createEvent"
                     android:layout_width="0dp"
                     android:layout_weight="5"
-                    android:text="Create Event"
+                    android:text="Criar Evento"
                     android:layout_height="wrap_content" />
 
                 <Button
                     android:id="@+id/cancelEvent"
                     android:layout_width="0dp"
                     android:layout_weight="5"
-                    android:text="Cancel"
+                    android:text="Cancelar"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>

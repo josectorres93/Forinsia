@@ -20,7 +20,8 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         android:background="@color/app_background"
-        app:headerLayout="@layout/nav_header_formador"
-        app:menu="@menu/activity_formador_drawer" />
+        app:menu="@menu/activity_formador_drawer"
+        app:headerLayout="@layout/nav_header_formador"/>
+
 
 </android.support.v4.widget.DrawerLayout>

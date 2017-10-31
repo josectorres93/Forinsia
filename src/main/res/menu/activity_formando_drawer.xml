@@ -20,7 +20,7 @@
             />
         <item
             android:id="@+id/rinquerito"
-            android:title="Avaliação"
+            android:title="Inqueritos"
             android:icon="@drawable/inqueritos"/>
          <item
              android:id="@+id/agendafo"

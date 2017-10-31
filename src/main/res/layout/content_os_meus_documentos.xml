@@ -28,7 +28,6 @@
         android:background="@color/colorPrimary"
         android:text="Neste momento não existe nota para esta acção."
         android:textSize="20dp"
-        android:textStyle="bold"
         android:layout_below="@+id/avaliacao"
         android:layout_alignParentStart="true"
         android:layout_marginStart="19dp" />

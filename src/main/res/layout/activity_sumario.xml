@@ -24,17 +24,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/textView8"
-        android:layout_toEndOf="@+id/textView8" />
+        android:layout_toEndOf="@+id/textView8"
+        android:background="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/submeterBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="31dp"
-        android:text="Submeter"
-        android:layout_marginTop="31dp"
-        android:layout_below="@+id/editText3"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="89dp"
+        android:layout_marginEnd="26dp"
+        android:text="Submeter" />
 
     <EditText
         android:id="@+id/editText3"
@@ -49,4 +50,5 @@
         android:textStyle="bold"
         android:layout_alignParentEnd="true"
         android:layout_alignStart="@+id/textView8" />
+
 </RelativeLayout>

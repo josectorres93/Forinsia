@@ -29,7 +29,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="62dp" />
+        tools:layout_editor_absoluteY="62dp"
+        android:background="@color/colorPrimary"/>
 
     <Button
         android:id="@+id/entidadeBtn"

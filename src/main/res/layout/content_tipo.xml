@@ -41,7 +41,9 @@
         android:textStyle="bold"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/formadorBtn"
-        android:layout_marginTop="63dp" />
+        android:layout_marginTop="63dp"
+        android:background="@color/textback"
+        />
 
     <TextView
         android:id="@+id/formadorTxt"
@@ -52,7 +54,8 @@
         android:textStyle="bold"
         android:textSize="18dp"
         android:layout_alignTop="@+id/formadorBtn"
-        android:layout_toEndOf="@+id/formadorBtn" />
+        android:layout_toEndOf="@+id/formadorBtn"
+        android:background="@color/textback"/>
 
     <TextView
         android:id="@+id/formandoTxt"
@@ -63,5 +66,6 @@
         android:text="Formando"
         android:textStyle="bold"
         android:textSize="18dp"
+        android:background="@color/textback"
         />
 </RelativeLayout>

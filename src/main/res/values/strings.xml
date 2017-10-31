@@ -1,21 +1,20 @@
 <resources>
-    <string name="app_name">INSIA App</string>
+    <string name="app_name">Forinsia APP</string>
     <string name="action_settings">Log Out</string>
-    <string name="title_activity_credencial">INSIA App</string>
-    <string name="title_activity_tipo">INSIA APP</string>
-    <string name="title_activity_formando">INSIA App</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="title_activity_formador">INSIA APP</string>
-    <string name="title_activity_inquerito">INSIA APP</string>
+    <string name="title_activity_credencial">Forinsia App</string>
+    <string name="title_activity_tipo">Forinsia APP</string>
+    <string name="title_activity_formando">Forinsia App</string>
+    <string name="navigation_drawer_open">Abrir</string>
+    <string name="navigation_drawer_close">Fechar</string>
+    <string name="title_activity_formador">Forinsia APP</string>
+    <string name="title_activity_inquerito">Forinsia APP</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="title_activity_adecorrer">INSIA App</string>
-    <string name="title_activity_aterminadas">INSIA App</string>
-    <string name="title_activity_os_meus_documentos">INSIA App</string>
-    <string name="title_activity_consultar_avaliacao">INSIA App</string>
-    <string name="title_activity_agenda">INSIA App</string>
-    <string name="app_id">302232956849354</string>
-    <string name="title_activity_os_meus_documentos_terminados">OsMeusDocumentosTerminados</string>
+    <string name="title_activity_adecorrer">Forinsia App</string>
+    <string name="title_activity_aterminadas">Forinsia App</string>
+    <string name="title_activity_os_meus_documentos">Forinsia App</string>
+    <string name="title_activity_consultar_avaliacao">Forinsia App</string>
+    <string name="title_activity_agenda">Forinsia App</string>
+    <string name="title_activity_os_meus_documentos_terminados">Forinsia App</string>
     <string-array name="sessoes">
         <item>20-02-2017</item>
         <item>23-03-2017</item>
@@ -30,26 +29,26 @@
         <item>entidade 6</item>
     </string-array>
 
-    <string name="backToMain">Back</string>
-    <string name="eventTitle">Title</string>
-    <string name="eventDesc">Description</string>
-    <string name="eventAttendee">Attendee</string>
-    <string name="eventStart">Start Time</string>
-    <string name="eventEnd">End Time</string>
-    <string name="eventLocation">Location</string>
+    <string name="backToMain">Voltar</string>
+    <string name="eventTitle">Titulo</string>
+    <string name="eventDesc">Descrição</string>
+    <string name="eventAttendee">Participante</string>
+    <string name="eventStart">Hora de Inicio</string>
+    <string name="eventEnd">Hora de Fim</string>
+    <string name="eventLocation">Localização</string>
 
-    <string name="createEventTitle">Title</string>
-    <string name="createEventDesc">Description</string>
-    <string name="createEventAttendee">Attendee</string>
-    <string name="createEventStart">Start At</string>
-    <string name="createEventStartDate">Pick Date</string>
-    <string name="createEventStartTime">Pick Time</string>
+    <string name="createEventTitle">Titulo</string>
+    <string name="createEventDesc">Descrição</string>
+    <string name="createEventAttendee">Participantes</string>
+    <string name="createEventStart">Inicio</string>
+    <string name="createEventStartDate">Escolha Data</string>
+    <string name="createEventStartTime">Escolha Hora</string>
 
-    <string name="createEventEnd">End At</string>
-    <string name="createEventEndDate">Pick Date</string>
-    <string name="createEventEndTime">Pick Time</string>
+    <string name="createEventEnd">Fim</string>
+    <string name="createEventEndDate">Escolha Data</string>
+    <string name="createEventEndTime">Escolha Hora</string>
 
 
-    <string name="createEventLocation">Location</string>
+    <string name="createEventLocation">Localização</string>
 
 </resources>
