@@ -17,7 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 //import android.widget.TextView;
-//import android.widget.Toast;
+import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 //import com.facebook.FacebookCallback;
@@ -28,18 +28,18 @@ import com.facebook.login.LoginResult;
 //import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.common.api.GoogleApiClient;
 
-//import com.google.android.gms.auth.api.signin.GoogleSignInResult;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
-//import com.google.android.gms.common.SignInButton;
-//import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 //import com.google.android.gms.auth.api.Auth;
 //import com.androidquery.AQuery;
-//import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 //import com.google.android.gms.common.api.ResultCallback;
 //import com.google.android.gms.common.api.Status;
-/*import com.google.android.gms.plus.People;
+//import com.google.android.gms.plus.People;
 //import com.google.android.gms.plus.Plus;
-//import com.google.android.gms.plus.model.people.Person;*/
+//import com.google.android.gms.plus.model.people.Person;
 
 import org.json.JSONObject;
 
@@ -59,18 +59,17 @@ import app.insia.forinsiaapp.Modelo.Utilizador;
  * O web service vai armazenar na base de dados os dados em relçao aos logions
  */
 
-public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener
-{
-
-    // private SignInButton signInButton;
-      //private GoogleSignInOptions gso;
-      //private GoogleApiClient mGoogleApiClient;
-    //private int SIGN_IN = 30;
-   CallbackManager callbackManager;
+public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+    private SignInButton signInButton;
+    private GoogleSignInOptions gso;
+    private GoogleApiClient mGoogleApiClient;
+    private int SIGN_IN = 30;
+    CallbackManager callbackManager;
     static ArrayList<Utilizador> users = new ArrayList<>();
     public ArrayList<Acao> acoes = new ArrayList<>();
-    //public static int permission = 0;
+    public static int permission = 0;
     static Utilizador logged;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,8 +77,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         callbackManager = CallbackManager.Factory.create();
-       //LoginButton loginButton = findViewById(R.id.login_button);
-       /*loginButton.setReadPermissions("email");
+        //LoginButton loginButton = findViewById(R.id.login_button);
+        /*loginButton.setReadPermissions("email");
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -108,10 +107,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 startActivityForResult(signInIntent, SIGN_IN);
             }
         });*/
-        final Acao a1= new Acao("Agricultura", "01/10/2017","Porto", (float) 0.0,0);
-        final Acao a2= new Acao("Pesca", "01/09/2017","Lisboa", (float) 11.1,1);
-        final Acao a3= new Acao("Pecuaria", "10/10/2017","Coimbra", (float) 0.0,0);
-        final Acao a4= new Acao("Construçao Civil", "01/05/2017","Porto", (float) 14.5,1);
+        final Acao a1 = new Acao("Agricultura", "01/10/2017", "Porto", (float) 0.0, 0);
+        final Acao a2 = new Acao("Pesca", "01/09/2017", "Lisboa", (float) 11.1, 1);
+        final Acao a3 = new Acao("Pecuaria", "10/10/2017", "Coimbra", (float) 0.0, 0);
+        final Acao a4 = new Acao("Construçao Civil", "01/05/2017", "Porto", (float) 14.5, 1);
         /*
         acoes.add(a1);
         acoes.add(a2);
@@ -123,14 +122,14 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         users.add(new Utilizador("perfil3", "123", 3,acoes));*/
         ImageButton googlep = findViewById(R.id.googleplusBtn);
         ImageButton facebook = findViewById(R.id.faceIBtn);
-        users.add(new Utilizador("perfil1","123", 1,acoes));
+        users.add(new Utilizador("perfil1", "123", 1, acoes));
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 acoes.add(a1);
                 acoes.add(a2);
-               // users.add(new Utilizador("perfil1", "123", 1,acoes));
-                logged=new Utilizador(users.get(0).getUser(),users.get(0).getPass(),users.get(0).getPermissao(),users.get(0).getAcoes());
+                //users.add(new Utilizador("perfil1", "123", 1,acoes));
+                logged = new Utilizador(users.get(0).getUser(), users.get(0).getPass(), users.get(0).getPermissao(), users.get(0).getAcoes());
                 finish();
                 startActivity(new Intent(v.getContext(), TipoActivity.class));
             }
@@ -141,20 +140,21 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                 acoes.add(a4);
                 acoes.add(a3);
                 acoes.add(a2);
-                users.add(new Utilizador("perfil2", "123", 2,acoes));
-                logged=new Utilizador(users.get(1).getUser(),users.get(1).getPass(),users.get(1).getPermissao(),users.get(1).getAcoes());
+                users.add(new Utilizador("perfil2", "123", 2, acoes));
+                logged = new Utilizador(users.get(1).getUser(), users.get(1).getPass(), users.get(1).getPermissao(), users.get(1).getAcoes());
                 finish();
                 startActivity(new Intent(v.getContext(), TipoActivity.class));
-
             }
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
     protected void getUserDetails(LoginResult loginResult) {
         GraphRequest data_request = GraphRequest.newMeRequest(
                 loginResult.getAccessToken(),
@@ -170,9 +170,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                     }
                 });
         Bundle permission_param = new Bundle();
-                data_request.setParameters(permission_param);
+        data_request.setParameters(permission_param);
         data_request.executeAsync();
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -186,27 +187,27 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
         return super.onOptionsItemSelected(item);
     }
 
-/*public void updatePermission (Utilizador u){
-     if(u.getKey()==1){
-        this.permission=1;
-     }else if(u.getKey()==2){
-         this.permission=2;
-     }else if(u.getKey()==3){
-         this.permission=3;
-     }
-  }*/
+    public void updatePermission(Utilizador u) {
+        if (u.getKey() == 1) {
+            this.permission = 1;
+        } else if (u.getKey() == 2) {
+            this.permission = 2;
+        } else if (u.getKey() == 3) {
+            this.permission = 3;
+        }
+    }
 
-//private void handleSignInResult(GoogleSignInResult result) {
-/*     //If the login succeed
-     if (result.isSuccess()) {
-         //Getting google account
-         final GoogleSignInAccount acct = result.getSignInAccount();
-         //Displaying name and email
-         String name = acct.getDisplayName();
-         final String mail = acct.getEmail();
-         // String photourl = acct.getPhotoUrl().toString();
-         final String givenname="",familyname="",displayname="",birthday="";
-        /* Plus.PeopleApi.load(mGoogleApiClient, acct.getId()).setResultCallback(new ResultCallback<People.LoadPeopleResult>() {
+    private void handleSignInResult(GoogleSignInResult result) {
+        //If the login succeed
+        if (result.isSuccess()) {
+            //Getting google account
+            final GoogleSignInAccount acct = result.getSignInAccount();
+            //Displaying name and email
+            String name = acct.getDisplayName();
+            final String mail = acct.getEmail();
+            // String photourl = acct.getPhotoUrl().toString();
+            final String givenname = "", familyname = "", displayname = "", birthday = "";
+       /*  Plus.PeopleApi.load(mGoogleApiClient, acct.getId()).setResultCallback(new ResultCallback<People.LoadPeopleResult>() {
              @Override
              public void onResult(@NonNull People.LoadPeopleResult loadPeopleResult) {
                  Person person = loadPeopleResult.getPersonBuffer().get(0);
@@ -226,17 +227,23 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
                  // Log.d("Birthday ",person.getBirthday());
                  // Log.d(TAG,"Image "+person.getImage());
              }
-         });
+         });*/
      } else {
-         //If login fails
-         Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();
-    }*/
+            //If login fails
+            Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();
+        }
+    }
+
+
   @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
+
     }
- @Override
- protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
+  @Override
+    protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
      super.onActivityResult(requestCode, resultCode, data);
      callbackManager.onActivityResult(requestCode, resultCode, data);
  }
+
+
 }
