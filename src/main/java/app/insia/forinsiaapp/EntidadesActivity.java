@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import app.insia.forinsiaapp.Modelo.Acao;
+
 
 /**
  * Esta atividade lista as entidades disponiveis para o utilizador

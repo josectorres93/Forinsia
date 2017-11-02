@@ -13,37 +13,36 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 //import android.util.Log;
 import android.view.Menu;
-//import android.view.MenuItem;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 //import android.widget.TextView;
 //import android.widget.Toast;
 
-/*
 import com.facebook.CallbackManager;
-import com.facebook.FacebookCallback;
-import com.facebook.FacebookException;
+//import com.facebook.FacebookCallback;
+//import com.facebook.FacebookException;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;*/
-//import com.google.android.gms.common.api.GoogleApiClient;
+//import com.facebook.login.widget.LoginButton;
+import com.google.android.gms.common.api.GoogleApiClient;
 
 //import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-//import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.ConnectionResult;
 //import com.google.android.gms.common.SignInButton;
 //import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 //import com.google.android.gms.auth.api.Auth;
-/*import com.androidquery.AQuery;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.plus.People;
-import com.google.android.gms.plus.Plus;
-import com.google.android.gms.plus.model.people.Person;*/
+//import com.androidquery.AQuery;
+//import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+//import com.google.android.gms.common.api.ResultCallback;
+//import com.google.android.gms.common.api.Status;
+/*import com.google.android.gms.plus.People;
+//import com.google.android.gms.plus.Plus;
+//import com.google.android.gms.plus.model.people.Person;*/
 
-//import org.json.JSONObject;
-//import org.json.JSONObject;
+import org.json.JSONObject;
+
 
 import java.util.ArrayList;
 import app.insia.forinsiaapp.Modelo.Acao;
@@ -60,14 +59,14 @@ import app.insia.forinsiaapp.Modelo.Utilizador;
  * O web service vai armazenar na base de dados os dados em relçao aos logions
  */
 
-public class MainActivity extends AppCompatActivity //implements GoogleApiClient.OnConnectionFailedListener
+public class MainActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener
 {
 
-  //   private SignInButton signInButton;
-    //  private GoogleSignInOptions gso;
+    // private SignInButton signInButton;
+      //private GoogleSignInOptions gso;
       //private GoogleApiClient mGoogleApiClient;
-      //private int SIGN_IN = 30;
-   // CallbackManager callbackManager;
+    //private int SIGN_IN = 30;
+   CallbackManager callbackManager;
     static ArrayList<Utilizador> users = new ArrayList<>();
     public ArrayList<Acao> acoes = new ArrayList<>();
     //public static int permission = 0;
@@ -76,12 +75,11 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar =  findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        //callbackManager = CallbackManager.Factory.create();
-       /* LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
-        loginButton.setReadPermissions("email");
+        callbackManager = CallbackManager.Factory.create();
+       //LoginButton loginButton = findViewById(R.id.login_button);
+       /*loginButton.setReadPermissions("email");
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
@@ -89,23 +87,21 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
             }
             @Override
             public void onCancel() {
-                // App code
             }
             @Override
             public void onError(FacebookException exception) {
-                // App code
             }
         });*/
-      /*  gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+        /*gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
         signInButton = (SignInButton) findViewById(R.id.sign_in_button);
         mGoogleApiClient = new GoogleApiClient.Builder(this)
-               .enableAutoManage(this /* FragmentActivity *///, this /* OnConnectionFailedListener*/ )
-        // .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
-        // .addApi(Plus.API)
-        //    .build();
-       /* signInButton.setOnClickListener(new View.OnClickListener() {
+               .enableAutoManage(this /* FragmentActivity *///, (GoogleApiClient.OnConnectionFailedListener) this /* OnConnectionFailedListener*/ )
+        /* .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+         //.addApi(Plus.API)
+            .build();
+        signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(mGoogleApiClient);
@@ -116,7 +112,8 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
         final Acao a2= new Acao("Pesca", "01/09/2017","Lisboa", (float) 11.1,1);
         final Acao a3= new Acao("Pecuaria", "10/10/2017","Coimbra", (float) 0.0,0);
         final Acao a4= new Acao("Construçao Civil", "01/05/2017","Porto", (float) 14.5,1);
-       /* acoes.add(a1);
+        /*
+        acoes.add(a1);
         acoes.add(a2);
         users.add(new Utilizador("perfil1", "123", 1,acoes));
         acoes.remove(a2);
@@ -136,7 +133,6 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
                 logged=new Utilizador(users.get(0).getUser(),users.get(0).getPass(),users.get(0).getPermissao(),users.get(0).getAcoes());
                 finish();
                 startActivity(new Intent(v.getContext(), TipoActivity.class));
-
             }
         });
         googlep.setOnClickListener(new View.OnClickListener() {
@@ -150,7 +146,6 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
                 finish();
                 startActivity(new Intent(v.getContext(), TipoActivity.class));
 
-
             }
         });
     }
@@ -160,7 +155,7 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
-    /*protected void getUserDetails(LoginResult loginResult) {
+    protected void getUserDetails(LoginResult loginResult) {
         GraphRequest data_request = GraphRequest.newMeRequest(
                 loginResult.getAccessToken(),
                 new GraphRequest.GraphJSONObjectCallback() {
@@ -168,15 +163,13 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
                     public void onCompleted(
                             JSONObject json_object,
                             GraphResponse response) {
-                        Intent intent = new Intent(MainActivity.this,
+                       /* Intent intent = new Intent(MainActivity.this,
                                 UserProfile.class);
                         intent.putExtra("userProfile", json_object.toString());
-                        startActivity(intent);
+                        startActivity(intent);*/
                     }
                 });
         Bundle permission_param = new Bundle();
-        permission_param.putString("fields", "id,name,email,
-                picture.width(120).height(120)");
                 data_request.setParameters(permission_param);
         data_request.executeAsync();
     }
@@ -193,8 +186,7 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
         return super.onOptionsItemSelected(item);
     }
 
-*/
-/* public void updatePermission (Utilizador u){
+/*public void updatePermission (Utilizador u){
      if(u.getKey()==1){
         this.permission=1;
      }else if(u.getKey()==2){
@@ -237,14 +229,14 @@ public class MainActivity extends AppCompatActivity //implements GoogleApiClient
          });
      } else {
          //If login fails
-         Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();*/
- /*   }
+         Toast.makeText(this, "Login Failed", Toast.LENGTH_LONG).show();
+    }*/
   @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
     }
- /*@Override
+ @Override
  protected void onActivityResult(final int requestCode, final int resultCode, final Intent data) {
      super.onActivityResult(requestCode, resultCode, data);
      callbackManager.onActivityResult(requestCode, resultCode, data);
- }*/
+ }
 }

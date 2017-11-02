@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import app.insia.forinsiaapp.Modelo.Utilizador;
+
 
 /**
  * Esta atividade vai ligar o utilizador ha entidade desejada

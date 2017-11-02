@@ -3,7 +3,6 @@ package app.insia.forinsiaapp;
 import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -37,7 +36,6 @@ public class OsMeusDocumentosActivity extends AppCompatActivity {
     Button buttonUp;
     Button downBtn;
     TextView textFolder;
-    String KEY_TEXTPSS = "TEXTPSS";
     static final int CUSTOM_DIALOG_ID = 0;
     ListView dialog_ListView;
     File root;
@@ -128,7 +126,7 @@ public class OsMeusDocumentosActivity extends AppCompatActivity {
         }
         curFolder = f;
         textFolder.setText(f.getPath());
-        File[] files = f.listFiles();
+       // File[] files = f.listFiles();
         fileList.clear();
         /*for(File file : files) {
             fileList.add(file.getPath());

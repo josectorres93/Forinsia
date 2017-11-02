@@ -24,7 +24,7 @@ public class ATerminadasActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aterminadas);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         TextView n11 =findViewById(R.id.n11);
         TextView n22 =findViewById(R.id.n22);
