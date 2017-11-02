@@ -1,5 +1,7 @@
 <resources>
+
     <string name="app_name">Forinsia APP</string>
+    <string name="app_id">302232956849354</string>
     <string name="action_settings">Log Out</string>
     <string name="title_activity_credencial">Forinsia App</string>
     <string name="title_activity_tipo">Forinsia APP</string>
@@ -28,7 +30,6 @@
         <item>entidade 5</item>
         <item>entidade 6</item>
     </string-array>
-
     <string name="backToMain">Voltar</string>
     <string name="eventTitle">Titulo</string>
     <string name="eventDesc">Descrição</string>
@@ -36,19 +37,15 @@
     <string name="eventStart">Hora de Inicio</string>
     <string name="eventEnd">Hora de Fim</string>
     <string name="eventLocation">Localização</string>
-
     <string name="createEventTitle">Titulo</string>
     <string name="createEventDesc">Descrição</string>
     <string name="createEventAttendee">Participantes</string>
     <string name="createEventStart">Inicio</string>
     <string name="createEventStartDate">Escolha Data</string>
     <string name="createEventStartTime">Escolha Hora</string>
-
     <string name="createEventEnd">Fim</string>
     <string name="createEventEndDate">Escolha Data</string>
     <string name="createEventEndTime">Escolha Hora</string>
-
-
     <string name="createEventLocation">Localização</string>
 
 </resources>

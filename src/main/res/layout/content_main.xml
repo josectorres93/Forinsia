@@ -119,11 +119,14 @@
         android:layout_marginStart="11dp"
         android:layout_below="@+id/faceIBtn"
         android:layout_alignStart="@+id/textView2" />
+
    <!-- <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_below="@+id/sign_in_button"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp" />-->
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="13dp" />-->
 </RelativeLayout>
